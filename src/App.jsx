@@ -30,5 +30,5 @@ export default () => {
     ].map((edge) => ({ ...edge, size: 5 })),
   };
 
-  return <Graph nodes={nodes} edges={edges} />;
+  return <Graph width={1200} height={800} nodes={nodes} edges={edges} />;
 };

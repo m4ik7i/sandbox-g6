@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import G6 from '@antv/g6';
 
-export default ({ nodes, edges }) => {
-  const data = { nodes, edges };
-
+export default ({ width, height, nodes, edges }) => {
   const containerRef = useRef(null);
 
   let graph;
@@ -26,7 +24,7 @@ export default ({ nodes, edges }) => {
         center: [width / 2, height / 2],
       },
     });
-    graph.data(data);
+    graph.data({ nodes, edges });
     graph.render();
 
     const forceLayout = graph.get('layoutController').layoutMethod;
@@ -42,13 +40,13 @@ export default ({ nodes, edges }) => {
       e.item.get('model').fx = null;
       e.item.get('model').fy = null;
     });
-  }, [data]);
+  }, [nodes, edges]);
 
-  const refreshDragedNodePosition = (e) => {
-    const model = e.item.get('model');
-    model.fx = e.x;
-    model.fy = e.y;
-  };
+  return <div ref={containerRef} css={{ width, height, border: '2px solid' }} />;
+};
 
-  return <div ref={containerRef} css={{ width: 1200, height: 800, border: '2px solid' }} />;
+const refreshDragedNodePosition = (e) => {
+  const model = e.item.get('model');
+  model.fx = e.x;
+  model.fy = e.y;
 };
