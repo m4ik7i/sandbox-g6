@@ -42,7 +42,7 @@ export default ({ width, height, nodes, edges }) => {
     });
   }, [nodes, edges]);
 
-  return <div ref={containerRef} css={{ width, height, border: '2px solid' }} />;
+  return <div ref={containerRef} css={{ width, height }} />;
 };
 
 const refreshDragedNodePosition = (e) => {
