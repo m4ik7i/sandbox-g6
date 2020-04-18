@@ -27,11 +27,43 @@ export const initialState = {
     {
       id: 'node-3',
     },
+    {
+      id: 'node-4',
+    },
+    {
+      id: 'node-5',
+    },
+    {
+      id: 'node-6',
+    },
+    {
+      id: 'node-7',
+    },
   ],
   edges: [
     {
       source: 'node-1',
       target: 'node-2',
+    },
+    {
+      source: 'node-2',
+      target: 'node-3',
+    },
+    {
+      source: 'node-3',
+      target: 'node-4',
+    },
+    {
+      source: 'node-2',
+      target: 'node-5',
+    },
+    {
+      source: 'node-3',
+      target: 'node-6',
+    },
+    {
+      source: 'node-6',
+      target: 'node-7',
     },
   ],
 };
