@@ -1,4 +1,13 @@
-import App from 'next/app';
+import { Provider } from 'react-redux';
+import Store from '../src/Store';
+
 import 'semantic-ui-css/semantic.min.css';
 
-export default class extends App {}
+export default ({ Component, pageProps }) => {
+  const store = Store.instance();
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+};
