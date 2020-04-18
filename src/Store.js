@@ -37,6 +37,9 @@ export const initialState = {
 };
 
 export const reducer = createReducer(initialState, {
+  reset: (_state, _action) => {
+    return initialState;
+  },
   'nodes/add': (state, _action) => {
     const { nodes } = state;
     return {

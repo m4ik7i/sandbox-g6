@@ -32,6 +32,16 @@ export default () => {
           <Icon name="plus square outline" />
           <span>Edge</span>
         </Button>
+        <Button
+          basic
+          color="black"
+          onClick={() => {
+            dispatch({ type: 'reset' });
+          }}
+        >
+          <Icon name="undo" />
+          <span>Reset</span>
+        </Button>
       </div>
       <div css={{ width: 1208, border: '4px solid' }}>
         <Graph width={1200} height={696} nodes={nodes} edges={edges} />
