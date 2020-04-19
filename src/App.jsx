@@ -10,7 +10,7 @@ export default () => {
   return (
     <div className="App" css={{ margin: 8 }}>
       <GraphOperator />
-      <div css={{ marginBottom: 4 }} />
+      <div css={{ marginBottom: 6 }} />
       <GraphViewer width={1200} height={696} nodes={nodes} edges={edges} />
     </div>
   );
