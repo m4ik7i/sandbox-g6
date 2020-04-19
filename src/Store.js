@@ -82,7 +82,25 @@ export const reducer = createReducer(initialState, {
     };
   },
   'edges/add': (state, _action) => {
-    // unimplemented
-    return state;
+    const { nodes, edges } = state;
+    if (nodes.length < 2) {
+      return state;
+    }
+    const source = nodes[Math.floor(Math.random() * nodes.length)].id;
+    const target = (() => {
+      while (true) {
+        const target = nodes[Math.floor(Math.random() * nodes.length)].id;
+        if (target !== source) {
+          return target;
+        }
+      }
+    })();
+    return {
+      ...state,
+      edges: append({
+        source,
+        target,
+      })(edges),
+    };
   },
 });

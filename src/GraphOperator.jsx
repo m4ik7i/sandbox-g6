@@ -14,7 +14,11 @@ export default () => {
         onClick={() => {
           const timer = setInterval(() => {
             dispatch({ type: 'nodes/add' });
-          }, 10);
+            setTimeout(() => {
+              dispatch({ type: 'nodes/add' });
+              dispatch({ type: 'edges/add' });
+            }, 10);
+          }, 20);
           setTimer(timer);
         }}
       >
@@ -46,7 +50,7 @@ export default () => {
       <Button
         primary
         onClick={() => {
-          alert('unimplemented');
+          dispatch({ type: 'edges/add' });
         }}
       >
         <Icon name="plus square outline" />
